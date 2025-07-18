@@ -3,6 +3,23 @@ import pickle
 import streamlit as st
 import requests
 
+# Set background using an online image
+def set_bg():
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("https://img.freepik.com/free-photo/assortment-cinema-elements-red-background-with-copy-space_23-2148457848.jpg?semt=ais_hybrid&w=740");
+            background-attachment: fixed;
+            background-size: cover;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+set_bg()
+
 # Function to fetch poster image from TMDB API
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=8228730e3316a282cbe0d287b58da186&language=en-US"
